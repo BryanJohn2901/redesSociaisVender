@@ -254,18 +254,18 @@
                 Mesmo começando do zero.
             </p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
-                <div class="glass-panel p-2 rounded-2xl border-white/5 hover:border-brand-primary/30 transition duration-300 overflow-hidden">
-                    <img src="assets/s.webp" alt="Depoimento de aluno no WhatsApp" class="w-full h-full object-cover rounded-xl">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto items-center" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="h-[320px] w-full flex items-center justify-center">
+                    <img src="assets/s.webp" alt="Depoimento de aluno no WhatsApp" class="w-full max-w-[420px] max-h-[320px] object-contain cursor-zoom-in depoimento-expandivel">
                 </div>
-                <div class="glass-panel p-2 rounded-2xl border-white/5 hover:border-brand-primary/30 transition duration-300 overflow-hidden">
-                    <img src="assets/unnamed-1.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full h-full object-cover rounded-xl">
+                <div class="h-[320px] w-full flex items-center justify-center">
+                    <img src="assets/unnamed-1.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full max-w-[420px] max-h-[320px] object-contain cursor-zoom-in depoimento-expandivel">
                 </div>
-                <div class="glass-panel p-2 rounded-2xl border-white/5 hover:border-brand-primary/30 transition duration-300 overflow-hidden">
-                    <img src="assets/unnamed-3.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full h-full object-cover rounded-xl">
+                <div class="h-[320px] w-full flex items-center justify-center">
+                    <img src="assets/unnamed-3.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full max-w-[420px] max-h-[320px] object-contain cursor-zoom-in depoimento-expandivel">
                 </div>
-                <div class="glass-panel p-2 rounded-2xl border-white/5 hover:border-brand-primary/30 transition duration-300 overflow-hidden">
-                    <img src="assets/unnamed.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full h-full object-cover rounded-xl">
+                <div class="h-[320px] w-full flex items-center justify-center">
+                    <img src="assets/unnamed.png.webp" alt="Depoimento de aluno no WhatsApp" class="w-full max-w-[420px] max-h-[320px] object-contain cursor-zoom-in depoimento-expandivel">
                 </div>
             </div>
 
@@ -420,6 +420,11 @@
         </div>
     </div>
 
+    <div id="depoimentoModal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/95 backdrop-blur-sm">
+        <button id="closeDepoimentoModal" class="absolute top-4 right-4 text-white text-3xl leading-none hover:text-brand-primary transition-colors cursor-pointer" aria-label="Fechar imagem">&times;</button>
+        <img id="depoimentoModalImage" src="" alt="Depoimento ampliado" class="max-w-[95vw] max-h-[90vh] object-contain rounded-xl">
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Inicializar AOS
@@ -457,6 +462,47 @@
         }
         leadModal.addEventListener('click', e => { if (e.target === leadModal) toggleLeadModal(); });
         window.addEventListener('keydown', e => { if (e.key === 'Escape' && !leadModal.classList.contains('hidden')) toggleLeadModal(); });
+
+        // Expandir imagens de depoimento
+        const depoimentoModal = document.getElementById('depoimentoModal');
+        const depoimentoModalImage = document.getElementById('depoimentoModalImage');
+        const closeDepoimentoModal = document.getElementById('closeDepoimentoModal');
+        const depoimentosExpandiveis = document.querySelectorAll('.depoimento-expandivel');
+
+        function openDepoimentoModal(src, alt) {
+            if (!depoimentoModal || !depoimentoModalImage) return;
+            depoimentoModalImage.src = src;
+            depoimentoModalImage.alt = alt || 'Depoimento ampliado';
+            depoimentoModal.classList.remove('hidden');
+            depoimentoModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDepoimentoImageModal() {
+            if (!depoimentoModal || !depoimentoModalImage) return;
+            depoimentoModal.classList.add('hidden');
+            depoimentoModal.classList.remove('flex');
+            depoimentoModalImage.src = '';
+            if (leadModal && !leadModal.classList.contains('hidden')) return;
+            document.body.style.overflow = 'auto';
+        }
+
+        depoimentosExpandiveis.forEach((img) => {
+            img.addEventListener('click', () => openDepoimentoModal(img.src, img.alt));
+        });
+        if (closeDepoimentoModal) {
+            closeDepoimentoModal.addEventListener('click', closeDepoimentoImageModal);
+        }
+        if (depoimentoModal) {
+            depoimentoModal.addEventListener('click', (e) => {
+                if (e.target === depoimentoModal) closeDepoimentoImageModal();
+            });
+        }
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && depoimentoModal && !depoimentoModal.classList.contains('hidden')) {
+                closeDepoimentoImageModal();
+            }
+        });
 
         // Máscara Telefone
         const phoneInput = document.getElementById('lead-phone');
