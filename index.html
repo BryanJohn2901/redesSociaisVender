@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL 10K | Como Vender Consultoria Online</title>
+    <meta name="description" content="Aprenda a transformar seu Instagram em uma ferramenta que gera alunos todos os dias, sem viralizar nem virar influencer.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#0a0a0a',
+                            surface: '#121212',
+                            primary: '#EF482D',
+                            primaryHover: '#d93a20',
+                            accent: '#991B1B',
+                            dark: '#1a1a1a',
+                            darkgray: '#111111',
+                            success: '#22c55e',
+                            gray: {
+                                300: '#d1d5db',
+                                400: '#9ca3af',
+                                500: '#6b7280',
+                                600: '#4b5563'
+                            }
+                        }
+                    },
+                    animation: {
+                        'shimmer': 'shimmer 1.5s infinite linear',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shimmer: { '100%': { transform: 'translateX(100%)' } },
+                        glowPulse: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(239, 72, 45, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(239, 72, 45, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { 
+            background-color: #0a0a0a; 
+            color: white; 
+        }
+        
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-strong { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        .blob { position: absolute; width: 600px; height: 600px; background: rgba(239, 72, 45, 0.12); filter: blur(120px); border-radius: 50%; z-index: -1; pointer-events: none; }
+        
+        .gradient-text { background: linear-gradient(135deg, #EF482D 0%, #FF6B35 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #EF482D; border-radius: 10px; }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-primary selection:text-white">
+
+    <div class="fixed inset-0 bg-[radial-gradient(at_0%_0%,rgba(239,72,45,0.08)_0px,transparent_50%)] z-[-2]"></div>
+    <div class="blob top-[-10%] right-[-10%]"></div>
+    <div class="blob bottom-[20%] left-[-20%]"></div>
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 hidden md:block" data-aos="fade-down" data-aos-duration="1000"> 
+        <div class="container mx-auto max-w-5xl"> 
+            <div class="relative flex items-center justify-between px-6 py-3 rounded-full glass-strong shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] transition-all duration-300 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_0_rgba(239,72,45,0.15)]"> 
+                
+                <a href="#" class="block hover:opacity-80 transition-opacity duration-300 flex items-center shrink-0"> 
+                    <img src="assets/logoPTA.svg" alt="Logo Personal Trainer Academy" class="h-14 w-auto">
+                </a> 
+
+                <div class="hidden md:flex items-center gap-8"> 
+                    <a href="#" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group"> 
+                        HOME 
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span> 
+                    </a> 
+                    <a href="#metodo" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group"> 
+                        O Método 
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span> 
+                    </a> 
+                    <a href="#sobre" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group"> 
+                        Especialista 
+                        <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span> 
+                    </a> 
+                </div> 
+
+                <button onclick="toggleLeadModal()" class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-brand-primary hover:bg-brand-accent px-10 py-4 transition-all duration-300 shadow-[0_0_30px_rgba(239,72,45,0.4)] hover:shadow-[0_0_50px_rgba(239,72,45,0.6)] hover:-translate-y-0.5 cursor-pointer border-0 shrink-0"> 
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div> 
+                    <span class="relative text-xs font-bold uppercase tracking-[0.2em] text-white"> 
+                        Inscreva-se 
+                    </span> 
+                </button> 
+
+            </div> 
+        </div> 
+    </nav>
+
+    <section class="relative min-h-[90vh] pt-32 pb-20 flex items-center overflow-hidden">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            
+            <div class="space-y-8" data-aos="fade-right">
+                <img src="assets/logoEvento.svg" alt="Logo do evento" class="h-14 md:h-16 w-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary font-title text-sm font-bold uppercase tracking-widest backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+                    Aula do dia 12/05 às 21h00 • Ao vivo
+                </div>
+
+                <h1 class="font-title text-5xl md:text-6xl lg:text-[4.5rem] font-bold uppercase leading-[1.05] text-white drop-shadow-2xl">
+                    Como vender de <span class="gradient-text">X a Y consultorias online</span>
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl font-title text-white uppercase tracking-wider opacity-90">
+                    Usando o Instagram, sem viralizar nem virar influencer.
+                </h2>
+
+                <p class="text-lg text-gray-400 max-w-lg leading-relaxed font-light">
+                    Aprenda a transformar seu Instagram em uma ferramenta que gera alunos todos os dias. Conteúdo 100% prático e gratuito, direto de quem já ajudou centenas de Personais a viverem de consultoria.
+                </p>
+
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <button onclick="toggleLeadModal()" class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-brand-primary px-10 py-5 transition-all duration-300 shadow-[0_0_30px_rgba(239,72,45,0.4)] hover:shadow-[0_0_50px_rgba(239,72,45,0.6)] hover:-translate-y-1 text-white font-title font-bold text-lg uppercase tracking-widest cursor-pointer w-full sm:w-auto">
+                        <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
+                        <span class="relative flex items-center justify-center gap-2">
+                            Quero Participar da Aula <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </button>
+                    <a href="#metodo" class="flex items-center justify-center gap-2 px-8 py-5 rounded-xl border border-white/10 hover:border-brand-primary hover:bg-brand-primary/5 text-white transition-all duration-300 font-title font-bold uppercase tracking-widest text-sm">
+                        Ver detalhes <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative hidden lg:block" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl overflow-hidden glass-panel p-2 shadow-[0_0_40px_rgba(239,72,45,0.2)] transform hover:scale-105 transition duration-500">
+                        <div class="w-full aspect-[3/4] bg-[#111] rounded-xl flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
+                            <img src="assets/rafa01.webp" alt="Rafael Tonietto" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden glass-panel p-2 shadow-[0_0_40px_rgba(239,72,45,0.2)] transform hover:scale-105 transition duration-500 mt-12">
+                        <div class="w-full aspect-[3/4] bg-[#111] rounded-xl flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-brand-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></div>
+                            <img src="assets/rafa2.webp" alt="Rafael Tonietto" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="metodo" class="py-24 relative border-y border-white/5 bg-[#0d0d0d]">
+        <div class="container mx-auto px-6">
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div data-aos="fade-right">
+                    <h3 class="font-title text-4xl md:text-5xl font-bold text-white uppercase mb-10 leading-tight">
+                        O que você vai <br><span class="text-brand-primary">aprender na aula</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="w-8 h-8 rounded bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0"><i class="fas fa-check"></i></div>
+                            <p class="text-gray-300 text-sm md:text-base">Como usar o Instagram pra atrair alunos prontos pra comprar</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="w-8 h-8 rounded bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0"><i class="fas fa-check"></i></div>
+                            <p class="text-gray-300 text-sm md:text-base">O que postar nos stories e nos reels pra gerar resultado</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="w-8 h-8 rounded bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0"><i class="fas fa-check"></i></div>
+                            <p class="text-gray-300 text-sm md:text-base">Como conversar com o seguidor e fazer ele virar aluno</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="w-8 h-8 rounded bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0"><i class="fas fa-check"></i></div>
+                            <p class="text-gray-300 text-sm md:text-base">Os erros que te impedem de vender no digital</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="w-8 h-8 rounded bg-brand-primary/20 text-brand-primary flex items-center justify-center shrink-0"><i class="fas fa-check"></i></div>
+                            <p class="text-gray-300 text-sm md:text-base">O modelo de consultoria que pode dobrar teu faturamento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h3 class="font-title text-4xl md:text-5xl font-bold text-white uppercase mb-10 leading-tight">
+                        Pra quem é <br><span class="text-brand-primary">essa aula</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="text-xl">👉</div>
+                            <p class="text-gray-300 text-sm md:text-base font-medium">Personais que querem parar de depender de indicação</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="text-xl">👉</div>
+                            <p class="text-gray-300 text-sm md:text-base font-medium">Quem tá cansado de postar e não ver resultado</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="text-xl">👉</div>
+                            <p class="text-gray-300 text-sm md:text-base font-medium">Quem quer começar a vender online, mesmo com poucos seguidores</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-xl flex gap-4 items-center hover:border-brand-primary/30 transition-colors">
+                            <div class="text-xl">👉</div>
+                            <p class="text-gray-300 text-sm md:text-base font-medium">Quem quer viver de consultoria, com liberdade e previsibilidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-title text-3xl md:text-4xl font-bold text-white uppercase mb-4" data-aos="fade-up">
+                Esses são só alguns dos resultados que quem participa <br>das aulas com o Rafael tem alcançado
+            </h3>
+            <p class="text-brand-primary font-bold text-xl uppercase tracking-widest mb-16" data-aos="fade-up" data-aos-delay="100">
+                Mesmo começando do zero.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start text-left border-white/5 hover:border-brand-primary/30 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center"><i class="fas fa-user text-brand-primary"></i></div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Aluno Confirmado</p>
+                            <div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm italic">"Pessoal, apliquei a estratégia dos stories ontem e já estou respondendo alunos que vieram fechar consultoria! Impressionante."</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start text-left border-white/5 hover:border-brand-primary/30 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center"><i class="fas fa-user text-brand-primary"></i></div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Aluna Confirmada</p>
+                            <div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm italic">"Só de parar de cometer os erros que o Rafa falou, meu engajamento triplicou e fechei 3 contratos novos essa semana."</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start text-left border-white/5 hover:border-brand-primary/30 transition duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 flex items-center justify-center"><i class="fas fa-user text-brand-primary"></i></div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Aluno Confirmado</p>
+                            <div class="flex text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm italic">"Sair do zero no online parecia impossível, mas o modelo ensinado é tão claro que eu comecei a faturar no mesmo mês."</p>
+                </div>
+            </div>
+
+            <button onclick="toggleLeadModal()" class="mt-16 group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-brand-primary px-10 py-5 transition-all duration-300 shadow-[0_0_30px_rgba(239,72,45,0.4)] hover:shadow-[0_0_50px_rgba(239,72,45,0.6)] hover:-translate-y-1 text-white font-title font-bold text-lg uppercase tracking-widest cursor-pointer">
+                <span class="relative">Quero Participar da Aula Gratuita</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="py-24 relative bg-[#0a0a0a] border-y border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <h3 class="font-title text-4xl md:text-5xl font-bold text-white uppercase mb-16" data-aos="fade-up">
+                Como <span class="text-brand-primary">participar</span>.
+            </h3>
+
+            <div class="glass-panel max-w-lg mx-auto p-10 rounded-3xl border-brand-primary/20 relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-3xl"></div>
+                
+                <div class="space-y-10 relative z-10">
+                    <div>
+                        <h4 class="font-title text-2xl font-bold text-white uppercase mb-2">Clique no botão</h4>
+                        <p class="text-gray-400">e entre no grupo do WhatsApp.</p>
+                    </div>
+                    
+                    <div class="w-full h-px bg-white/10"></div>
+                    
+                    <div>
+                        <h4 class="font-title text-2xl font-bold text-white uppercase mb-2">Fique atento</h4>
+                        <p class="text-gray-400">vamos enviar o link exclusivo da aula no grupo.</p>
+                    </div>
+                    
+                    <div class="w-full h-px bg-white/10"></div>
+
+                    <div>
+                        <h4 class="font-title text-2xl font-bold text-brand-primary uppercase mb-2">Participe ao vivo</h4>
+                        <p class="text-gray-300 mb-1">🗓️ <strong>Terça, 12/05 às 21h00</strong></p>
+                        <p class="text-gray-400 text-sm">🎯 Exclusiva pra quem estiver no grupo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="toggleLeadModal()" class="mt-12 group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-brand-primary px-10 py-5 transition-all duration-300 shadow-[0_0_30px_rgba(239,72,45,0.4)] hover:shadow-[0_0_50px_rgba(239,72,45,0.6)] hover:-translate-y-1 text-white font-title font-bold text-lg uppercase tracking-widest cursor-pointer">
+                <span class="relative">Quero Participar da Aula Gratuita</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 relative">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-panel p-8 md:p-12 rounded-3xl border-white/5 grid md:grid-cols-12 gap-10 items-center">
+                
+                <div class="md:col-span-4" data-aos="fade-right">
+                    <div class="w-full aspect-[3/4] bg-gradient-to-tr from-[#111] to-[#222] rounded-2xl flex items-center justify-center border border-white/10 overflow-hidden shadow-[0_0_40px_rgba(239,72,45,0.15)]">
+                        <img src="assets/rafa3.webp" alt="Rafael Tonietto" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <div class="md:col-span-8 space-y-6" data-aos="fade-left">
+                    <h3 class="font-title text-4xl font-bold text-white uppercase">Sobre Rafael Tonietto</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Rafael é CEO e cofundador da Personal Trainer Academy, a maior escola de formação de personais do Brasil. Nos últimos anos, ele ajudou centenas de profissionais da Educação Física a aumentarem seus ganhos e lotarem suas agendas, tanto no presencial quanto no online.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Agora, ele vai abrir uma aula 100% gratuita pra mostrar como qualquer personal pode usar as redes sociais pra vender consultoria e viver disso.
+                    </p>
+                    <button onclick="toggleLeadModal()" class="mt-4 bg-brand-primary/10 border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white transition-colors duration-300 font-title font-bold uppercase tracking-widest px-8 py-3 rounded-lg text-sm">
+                        Quero Participar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-darkgray border-t border-white/5 pt-16 pb-24 relative z-20"> 
+        <div class="container mx-auto px-6"> 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12"> 
+                <div class="lg:col-span-4 space-y-4"> 
+                    <a href="#" class="inline-block hover:opacity-80 transition-opacity duration-300 mb-4"> 
+                        <img src="assets/logoPTA.svg" alt="Logo Personal Trainer Academy" class="h-14">
+                    </a> 
+                    <p class="text-brand-gray-500 text-sm leading-relaxed max-w-sm"> A maior escola de formação de personais do Brasil. Transformando profissionais da Educação Física em líderes de mercado. </p> 
+                </div> 
+                <div class="lg:col-span-2 lg:col-start-7"> 
+                    <h4 class="text-brand-gray-300 font-bold uppercase tracking-widest text-xs mb-6">Navegação</h4> 
+                    <ul class="space-y-3 text-sm text-brand-gray-500"> 
+                        <li><a href="#metodo" class="hover:text-brand-primary transition-colors duration-200">O Método</a></li> 
+                        <li><a href="#sobre" class="hover:text-brand-primary transition-colors duration-200">Especialista</a></li> 
+                    </ul> 
+                </div> 
+                <div class="lg:col-span-2"> 
+                    <h4 class="text-brand-gray-300 font-bold uppercase tracking-widest text-xs mb-6">Legal</h4> 
+                    <ul class="space-y-3 text-sm text-brand-gray-500"> 
+                        <li><a href="#" class="hover:text-brand-primary transition-colors duration-200">Termos de Uso</a></li> 
+                        <li><a href="#" class="hover:text-brand-primary transition-colors duration-200">Política de Privacidade</a></li> 
+                    </ul> 
+                </div> 
+                <div class="lg:col-span-2"> 
+                    <h4 class="text-brand-gray-300 font-bold uppercase tracking-widest text-xs mb-6">Suporte</h4> 
+                    <ul class="space-y-3 text-sm text-brand-gray-500"> 
+                        <li><a href="tel:+5541988239396" class="hover:text-brand-success flex items-center gap-2 transition-colors"><i class="fab fa-whatsapp"></i> WhatsApp Suporte</a></li> 
+                    </ul> 
+                </div> 
+            </div> 
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"> 
+                <p class="text-brand-gray-600 text-xs"> Personal Trainer Academy 2026© Todos os direitos reservados. </p> 
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-gray-500"> 
+                    <span class="w-2 h-2 rounded-full bg-brand-success animate-pulse"></span> Ambiente 100% Seguro 
+                </div> 
+            </div> 
+        </div> 
+    </footer>
+
+    <div id="leadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-opacity">
+        <div class="glass-strong border-brand-primary/30 shadow-[0_0_50px_rgba(239,72,45,0.15)] w-full max-w-md p-8 rounded-2xl relative">
+            <button onclick="toggleLeadModal()" class="absolute top-4 right-4 text-gray-500 hover:text-white text-xl w-8 h-8 rounded-full hover:bg-white/10 transition flex items-center justify-center cursor-pointer">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="font-title text-2xl font-bold text-white uppercase mb-2">Inscreva-se Agora</h3>
+            <p class="text-gray-400 text-sm mb-2">Preencha seus dados para garantir sua vaga gratuita.</p>
+
+            <form id="form-ag-rt" class="space-y-4 mt-6 popup-form">
+                <div>
+                    <label for="lead-nome" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                    <input type="text" id="lead-nome" name="nome" required placeholder="Seu nome completo" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
+                </div>
+                <div>
+                    <label for="lead-email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                    <input type="email" id="lead-email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
+                </div>
+                <div>
+                    <label for="lead-phone" class="block text-sm font-medium text-gray-300 mb-1">Telefone</label>
+                    <div class="flex rounded-lg overflow-hidden border border-white/10 focus-within:border-brand-primary focus-within:ring-1 focus-within:ring-brand-primary bg-brand-bg">
+                        <span class="inline-flex items-center px-4 py-3 bg-brand-primary text-black font-bold select-none shrink-0">+55</span>
+                        <input type="tel" id="lead-phone" name="phone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel" class="flex-1 px-4 py-3 bg-transparent text-white placeholder-gray-500 outline-none min-w-0 mask-telefone">
+                    </div>
+                    <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
+                </div>
+
+                <input type="hidden" id="utm_source" name="utm_source" value="">
+                <input type="hidden" id="utm_term" name="utm_term" value="">
+                <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+                <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                <input type="hidden" id="utm_content" name="utm_content" value="">
+                <input type="hidden" id="url" name="url" value="">
+
+                <button type="submit" class="w-full bg-brand-primary text-white font-sans font-bold py-4 rounded-xl uppercase tracking-widest hover:shadow-[0_0_20px_rgba(239,72,45,0.6)] transition btn-submit mt-2 cursor-pointer">
+                    Avançar para o Grupo
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ once: true, offset: 50, duration: 800 });
+        }
+
+        // Capturar UTMs
+        const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        function captureUTMs() {
+            const params = new URLSearchParams(window.location.search);
+            UTM_KEYS.forEach(key => {
+                const value = params.get(key);
+                const element = document.getElementById(key);
+                if (element && value) element.value = value;
+            });
+            const urlField = document.getElementById('url');
+            if (urlField) urlField.value = window.location.href;
+        }
+        window.addEventListener('load', captureUTMs);
+
+        // Modal Toggle
+        const leadModal = document.getElementById('leadModal');
+        function toggleLeadModal() {
+            if (!leadModal) return;
+            if (leadModal.classList.contains('hidden')) {
+                leadModal.classList.remove('hidden');
+                leadModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                leadModal.classList.add('hidden');
+                leadModal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
+        leadModal.addEventListener('click', e => { if (e.target === leadModal) toggleLeadModal(); });
+        window.addEventListener('keydown', e => { if (e.key === 'Escape' && !leadModal.classList.contains('hidden')) toggleLeadModal(); });
+
+        // Máscara Telefone
+        const phoneInput = document.getElementById('lead-phone');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', e => {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            });
+        }
+
+        // Webhook Submission Rules
+        const form = document.getElementById('form-ag-rt');
+        const WEBHOOK_URL = 'https://hook.us1.make.com/bj1q14346ezeybpcqjb9ctea89aoatvn?produto=AG-RT';
+        const REDIRECT_URL = 'https://sndflw.com/i/rtmarketing';
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const nome = document.getElementById('lead-nome').value.trim();
+                const email = document.getElementById('lead-email').value.trim().toLowerCase();
+                const rawPhone = document.getElementById('lead-phone').value.replace(/\D/g, '');
+                const btnSubmit = e.target.querySelector('.btn-submit');
+                const errorMsg = e.target.querySelector('.error-msg');
+
+                if (rawPhone.length < 10) {
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                    return;
+                }
+                if (errorMsg) errorMsg.classList.add('hidden');
+
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = '<i class="fas fa-spinner animate-spin"></i> PROCESSANDO...';
+
+                const telefone = '+55' + rawPhone;
+                const payload = {
+                    nome: nome,
+                    email: email,
+                    telefone: telefone,
+                    utm_source: document.getElementById('utm_source')?.value || '',
+                    utm_term: document.getElementById('utm_term')?.value || '',
+                    utm_campaign: document.getElementById('utm_campaign')?.value || '',
+                    utm_medium: document.getElementById('utm_medium')?.value || '',
+                    utm_content: document.getElementById('utm_content')?.value || '',
+                    url: document.getElementById('url')?.value || window.location.href
+                };
+
+                try {
+                    await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                } catch (error) {
+                    console.error('Erro na submissão:', error);
+                } finally {
+                    window.location.href = REDIRECT_URL;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
